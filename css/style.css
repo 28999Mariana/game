@@ -1,0 +1,156 @@
+:root {
+  --font1: 'Poppins', sans-serif;
+  --font2: 'Lobster Two', cursive;
+  --white:#fff;
+  --black:#000;
+  --primary-light: #f9fafb;
+  --second-light:#f0f0f0;
+  --third-light:#DADBDB;
+  
+  --primary-dark:#22212c;
+  --second-grey:#3f3434;
+  
+  --first-shadow: rgba(0,0,0,0.3);
+  
+  --success: rgba(61, 168, 102, 0.6);
+  --error: rgba(168, 30, 14, 0.6);
+  
+  --primary-color:#ff0055;
+  --second-color:#00aaff;
+  }
+  
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font1);
+}
+select:focus, input:focus, button:focus{
+  outline: none;
+}
+
+body {
+    background: url(../img/Leonardo_Diffusion_modern_background_3d_moving_game_of_guessin_0\ \(3\).jpg);
+    overflow: hidden;
+    display:flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+.box{
+  transform-style: preserve-3d;
+  animation: animate 7s ease-in-out infinite alternate;
+}
+  span{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) 90%, transparent);
+    text-transform: uppercase;
+    line-height: 0.76em;
+    position: absolute;
+    color: #ffaa00;
+    font-size: 3.5em;
+    white-space: nowrap;
+    font-weight: bold;
+    padding: 0px 10px;
+    transform-style: preserve-3d;
+    text-shadow: 0 10px 15px var(--first-shadow);
+    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(109px);
+  }
+    i{
+      font-style: initial;
+    }
+      i:nth-child(1){
+        color: var(--primary-color);
+      }
+
+      i:nth-child(2){
+        color: var(--second-color);
+      }
+  
+
+@keyframes animate {
+0%{
+  transform: perspective(500px) rotateX(0deg) rotate(5deg);
+}
+100%{
+  transform: perspective(50px) rotateX(360deg) rotate(5deg);
+}
+}
+main{
+  z-index: 1;
+  background-color: #ff0055;
+  width: 800px;
+  height: 350px;
+  padding: 20px;
+  margin-top: 15%;
+  border-radius: 20px;
+}
+main h1{
+  text-align: center;
+  color:white;
+}
+main p{
+  color:white;
+  line-height: 2;
+  margin-top: 1.7%;
+  border-top: 2px solid;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.form label{
+  color:white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.form input{
+  color:white;
+  border:none;
+  font-size: 15px;
+  font-weight: 700;
+  width: 250px;
+  background-color: #ffaa00;
+  padding: 6px;
+  border-radius: 20px;
+}
+@media (max-width: 320px) {
+  .container{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+  }
+  main{
+    width: 300px;
+    height: 600px;
+    padding: 20px;
+  }
+  main h1{
+    font-size: 20px;
+    text-align: center;
+    line-height: 2;
+  }
+  main p{
+    font-size: 14px;
+    text-align: justify;
+    line-height: 2;
+    padding-top: 4%;
+    margin-top: 4%;
+  }
+  main form label{
+    border:2px solid;
+    text-align: center;
+    margin-left:20px;
+  }
+}
+/*  .lastResult {
+  color: white;
+  padding: 3px;
+}
